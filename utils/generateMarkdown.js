@@ -1,48 +1,61 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(license) {
+  if (license) {
+    return `https://img.shields.io/badge/License-${license.split(' ').join('_')}-blue.svg`;
+  } else {
+    return "";
+  }
+}
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  if (license) {
+    return `opensource.org/license/${license.split(' ').join('-')}`;
+  } else {
+    return "";
+  }
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  return `The license for this project is: ${license}`
+  return `The license for this project is: ${license}.`
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
-${renderLicenseBadge(data.license)}
-## Desciption
+  return `# ${data.title} [![License: ${data.license}](${renderLicenseBadge(data.license)})](${renderLicenseLink(data.license)})
+## Description
 ${data.description}
 
-##Table of Contents
-*[Installation](#Installation)  
-*[Usage](#Usage)  
-*[Contribution Guidelines](#Contribution&nbsp;Guidelines)  
-*[Testing](#Testing)  
-*[Questions](#Questions) 
+## Table of Contents
+*[Installation](#installation)  
+*[Usage](#usage)  
+*[Contributors](#contributors)  
+*[Tests](#tests)  
+*[Questions](#questions) 
 
-##Installation
+## Installation
 ${data.installation}    
 
-##Usage
+## Usage
 ${data.usage}
     
-##License
+## License
 ${renderLicenseSection(data.license)}
 
-##Contributing
+## Contributors
 ${data.contributors}
     
-##Tests 
+## Tests 
 ${data.tests}
     
-##Questions
+## Questions
+[Link to GitHub profile](github.com/${data.username})
 
+If you have more questions you can get in touch at ${data.email}
 `;
 }
 

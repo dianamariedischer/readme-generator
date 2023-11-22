@@ -38,8 +38,7 @@ const questions = [
         type: 'list',
         message: 'Which license are you using?',
         name: 'license',
-        choices: ['Apache 2.0 License', 'GNU GPL v3', 'MIT License', 'BSD 2-Clause License', 'BSD 3-Clause License', 'Boost Software License 1.0', 
-        'CC0', 'Eclipse Public License 2.0', 'GNU AGPL v3', 'GNU GPL v2', 'GNU LGPL v3', 'Mozilla Public License 2.0', 'The Unlicense']
+        choices: ['Apache 2.0', 'GNU GPL v3', 'MIT', 'BSD 2-Clause', 'BSD 3-Clause', 'EPL 2.0', 'MPL 2.0', 'Unlicense']
     },
     
     //Contributing
@@ -57,11 +56,21 @@ const questions = [
     },    
 
     //Questions
+    {
+        type: 'input',
+        message: 'What is your GitHub username?',
+        name: 'username'
+    },
+    {
+        type: 'input',
+        message: 'What is your email address?',
+        name: 'email'
+    },      
 ];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(`${fileName}.md`, data, (err) =>
+    fs.writeFile(`${fileName}-README.md`, data, (err) =>
     err ? console.error(err) : console.log('README generated!')
 );
 }
