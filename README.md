@@ -3,7 +3,7 @@
 ![Project Usage gif](readme-generator-usage.gif)
 
 ## Description
-This is a README generator that takes user input through inquirer in the terminal to create a profesional README markdown file.
+This is a README generator that takes user input through inquirer in the terminal to create a professional README markdown file.
 
 ## Table of Contents
 *[Installation](#installation)  
